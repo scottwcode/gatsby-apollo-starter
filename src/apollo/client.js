@@ -3,8 +3,9 @@ import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
 export const client = new ApolloClient({
   link: new HttpLink({
+    // uri: 'https://api-euwest.graphcms.com/v1/cjke2us3lng6v0953owd9fp15/master',
     uri: 'https://api-euwest.graphcms.com/v1/cjke2kn7p00ol01d2pinkptdj/master',
     fetch,
   }),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });

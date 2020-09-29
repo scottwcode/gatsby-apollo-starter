@@ -7,4 +7,4 @@
   Gatsby with Apollo
 </h1>
 
-This is a minimal example of using Gatsby and Apollo together. It’s GraphQL all the way down! 🐢
+A basic example of using Gatsby with Apollo. It uses 2 GraphQL queries: one that is statically generated at build time, and another that is dynmically generated at run time (and when changed, will not require a rebuild or even a refresh for the page to be updated for the user).

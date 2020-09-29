@@ -18,7 +18,7 @@ export const GatsbyQuery = graphql`
 // This query is executed at run time by Apollo.
 const APOLLO_QUERY = gql`
   {
-    meme(where: { id: "cjke2xlf9nhd90953khilyzja" }) {
+    meme(where: { id: "cjke35p4tni830953j0xemo7v" }) {
       photo {
         url(
           transformation: {
@@ -30,6 +30,11 @@ const APOLLO_QUERY = gql`
   }
 `;
 
+// // other memes from the same graphql endpoint
+// cjke2xdaqnh9j09532bnyblnq
+// cjke2v0ehng8v09531aivwv14
+// meme(where: { id: "cjke2xlf9nhd90953khilyzja" })
+
 export default ({
   data: {
     rickAndMorty: { character },
@@ -39,10 +44,17 @@ export default ({
 
   return (
     <div style={{ textAlign: 'center', width: '600px', margin: '50px auto' }}>
-      <h1>{character.name} With His Friend Sara</h1>
+      <h1>Here's {character.name} and a funny meme</h1>
       <p>
-        Rick & Morty API data loads at build time. Sara Vieira’s meme API loads
-        at runtime.
+        Rick & Morty API{' '}
+        <span role="img" aria-label="down">
+          👇{' '}
+        </span>{' '}
+        data loads at build time. The dog meme API
+        <span role="img" aria-label="down">
+          👇{' '}
+        </span>{' '}
+        loads at runtime.
       </p>
       <div>
         <img
@@ -51,12 +63,12 @@ export default ({
           style={{ width: 300 }}
         />
 
-        {loading && <p>Loading Sara...</p>}
+        {loading && <p>Loading meme...</p>}
         {error && <p>Error: ${error.message}</p>}
         {data && data.meme && data.meme.photo && (
           <img
             src={data.meme.photo.url}
-            alt="Sara Vieira"
+            alt="Funny Meme"
             style={{ maxWidth: 300 }}
           />
         )}
