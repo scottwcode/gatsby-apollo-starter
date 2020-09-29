@@ -3,6 +3,19 @@ import { graphql } from 'gatsby';
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
+// // new code \/ to use a datatable from app.jsx
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from '../app';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+// // new code ^
+
 // This query is executed at build time by Gatsby.
 export const GatsbyQuery = graphql`
   {
@@ -41,6 +54,15 @@ export default ({
   },
 }) => {
   const { loading, error, data } = useQuery(APOLLO_QUERY);
+
+  // // new code \/ to use a datatable from app.jsx
+  // ReactDOM.render(
+  //   <React.StrictMode>
+  //     <App />
+  //   </React.StrictMode>,
+  //   document.getElementById('root')
+  // );
+  // // new code ^
 
   return (
     <div style={{ textAlign: 'center', width: '600px', margin: '50px auto' }}>
